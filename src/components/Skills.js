@@ -5,6 +5,10 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
+import { isVisible } from "@testing-library/user-event/dist/utils";
+
 
 export const Skills = () => {
 	const responsive = {
@@ -33,10 +37,13 @@ export const Skills = () => {
 					<Row>
 						<Col>
 						<div className="skill-bx">
-							<h2>
-							  Skills
-							</h2>
+						<TrackVisibility>
+					   {({ isVisible }) =>
+					   <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
+							<h2>Skills</h2>
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>}
+						</TrackVisibility>
 							<Carousel className="skill-slider" responsive={responsive} infinite={true}>
 								<div className="item">
 									<img src={meter1} alt="Image" />
