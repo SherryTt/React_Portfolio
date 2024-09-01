@@ -10,7 +10,7 @@ import { isVisible } from "@testing-library/user-event/dist/utils";
 export const Banner = () => {
 	const [loopNum, setLoopNum] = useState(0);
 	const [isDeleting, setIsDeleting] = useState(false);
-	const toRotate = [ "FrontEnd Developer", "Mobile App Developer", "UI/UX Designer"];
+	const toRotate = [ "Shiori","FrontEnd Developer", "Mobile App Developer"];
 	const [text, setText] = useState('');
 	const [delta, setDelta] = useState(300 - Math.random() * 100);
 	const period = 2000;
@@ -54,7 +54,7 @@ export const Banner = () => {
 					   {({ isVisible }) =>
 					   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
 						<span className="tagline">Welcome to my Portfolio</span>
-						<h1>{"Hi I'm webdecoded"}</h1>
+						<h1>{"Hello, I'm "}</h1>
 						<h1><span className="wrap">{text}</span></h1>
 						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 						<button onClick={ () => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
